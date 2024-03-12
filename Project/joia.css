@@ -36,11 +36,12 @@ header{
         color:#9b9189;  
     } 
 }
-.card{
-    img{
-        border-radius: 40%; 
+#category{
+    .card{
+        border: solid rgba(255, 255, 255, 0.633);
     }
 }
+
 #our-story{
     p{
         font-size: 16pt;
