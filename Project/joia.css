@@ -8,15 +8,14 @@ h1{
     color: #3b3937;
     text-align: center;
 }
-
 header{
-    background-image: url("../Project/images/header\ background.png"); 
+    background-image: url("../Project/images/background.png"); 
     background-size: cover;
     text-align: center;
     h1{
         padding-top: 7rem;
         margin-bottom: 7rem; 
-        font-size: 100pt;
+        font-size: 80pt;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
     nav a{
@@ -36,13 +35,7 @@ header{
         color:#9b9189;  
     } 
 }
-#category{
-    .card{
-        border: solid rgba(255, 255, 255, 0.633);
-    }
-}
-
-#our-story{
+#ourStory{
     p{
         font-size: 16pt;
     }
@@ -72,7 +65,7 @@ footer{
     nav ul {
         display: flex; 
     } 
-    #our-story{
+    .ourStory{
         display: grid;
         grid-template-columns: auto auto;
         p{
@@ -82,4 +75,10 @@ footer{
             grid-column: 2/3;
         }
     }  
-}
+    .category{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        flex-wrap: wrap;
+    }   
+}   
