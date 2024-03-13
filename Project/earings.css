@@ -49,33 +49,20 @@ header{
         color:#9b9189;  
     } 
 }  
-.category{  
-    img{
-        border: solid #9b9189;
-        box-shadow: rgb(241, 238, 238) 0px 5px 15px;
-        border-width: 10px;
-        /*border-radius: 50%;*/
-        display: flex;
-        margin: 0 auto;
-        
-    } 
-    p{
-        /*font-weight: bold;*/
-        font-size: 20px;
-        color: #3b3937;
-        text-align: center;
-        padding: 1rem;
+.main-section{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .info{
+        background-color:  #9b9189;;
     }
-}  
-.our-story{
-    p{
-        font-size: 16pt;
-    }
-    img{
-        display: block;
-        margin: 0 auto; 
-        max-width: 100%; 
-    } 
+    .images{
+        p{
+            font-size: 20px;
+            color: #3b3937;
+            text-align: center;
+            padding: 1rem;
+        }
+}
 }
 footer{
     padding: 0.5rem; 
@@ -96,21 +83,22 @@ footer{
 @media  screen and (min-width: 40rem) {
     nav ul {
         display: flex; 
-    } 
-    .our-story{
+    }    
+    .main-section{
         display: grid;
-        grid-template-columns: auto auto;
-        p{
+        grid-template-columns: 2fr 5fr;
+        gap: 1rem;
+        .info{
             grid-column: 1/2;
         }
-        img{
+        .images{
             grid-column: 2/3;
         }
-    }  
-    .category{
-        display: flex;
-        justify-content: space-between;
-        text-align: center;
-        flex-wrap: wrap;
-    }   
+    }
+    .images{
+        display: grid;
+        justify-content: center;
+        gap: 1rem;
+        grid-template-columns: auto auto auto;
+    }
 }   
