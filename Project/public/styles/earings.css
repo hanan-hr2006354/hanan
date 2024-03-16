@@ -20,7 +20,7 @@ h1{
     padding-bottom: 2rem;
 }     
 header{
-    background-image: url("../Project/images/header\ background.png");  
+    background-image: url("../Project/images/header/background.png");
     background-size: cover;
     text-align: center; 
     img {
