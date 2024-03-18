@@ -199,6 +199,31 @@ footer {
     padding: 0.4rem;
 
 }
+svg{
+    width: 30px;
+}
+.cart:hover {
+    background-color: rgba(254, 254, 254, 0.51);
+    
+  }
+  .icon-cart{
+    position: relative;
+    color:black;
+    right:-45%
+}
+.icon-cart span{
+    position: absolute;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: 50%;
+    right: 50%;
+}
 
 @media screen and (min-width: 40rem) {
     nav ul {
