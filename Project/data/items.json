@@ -1,0 +1,37 @@
+{
+    "items": [
+      {
+        "id": 1,
+        "name": "Ring",
+        "category": "Rings",
+        "price": 420,
+        "description": "A description of item 1",
+        "seller": "joiaseller"
+      },
+      {
+        "id": 2,
+        "name": "Braclete",
+        "category": "Bracletes",
+        "price": 510,
+        "description": "A description of item 2",
+        "seller": "joiaseller"
+      },
+      {
+        "id": 3,
+        "name": "earring",
+        "category": "Earings",
+        "price": 350,
+        "description": "A description of item 3",
+        "seller": "joiaseller"
+      },
+      {
+        "id": 4,
+        "name": "necklace",
+        "category": "Neclaces",
+        "price": 800,
+        "description": "A description of item 4",
+        "seller": "joiaseller"
+      }
+    ]
+  }
+  

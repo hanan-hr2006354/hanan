@@ -63,7 +63,7 @@ form {
     max-width: 500px;
     padding: 1em;
   }
-main input[type="email"],
+main input[type="username"],
 main input[type="password"],
 main input[type="submit"] { /* Added the submit button here as well */
     width: 100%;
