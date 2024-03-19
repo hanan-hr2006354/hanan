@@ -1,30 +1,33 @@
 let listProductHTML = document.querySelector('.category-necklace');
-let necklaces = [];
-
-// const addDataToHTML = () => {
-//     if (necklaces.length > 0) { // if has data
-//         necklaces.forEach(necklace => {
-//             let newNecklace = document.createElement('div');
-//             newNecklace.dataset.id = necklace.id;
-//             newNecklace.classList.add('card');
-//             newNecklace.innerHTML =
-//                 `<img src="${necklace.image}" alt="">
-//                  <p>${necklace.name}</p>
-//                  <div class="price">$${necklace.price}</div>
-//                  <button class="purchase">Purchase Item</button>`;
-//             listProductHTML.appendChild(newNecklace);
-//         });
-//     }
-// };
-
-const getNecklaceData = () => {
-    fetch('./necklaces.json')
-    .then(response=>response.json())
+let products=[]
+const initApp = () => {
+    fetch('necklaces.json')
+    .then(response => response.json())
     .then(data => {
-        necklaces = data;
-        console.log(necklaces)
-        // addDataToHTML();
-        
+        products = data;
+        addDataToHTML();
+
+
     })
 }
-getNecklaceData();
+initApp();
+
+const addDataToHTML = () => {
+
+        if(products.length > 0) // if has data
+        {
+            products.forEach(product => {
+                let newProduct = document.createElement('div');
+                newProduct.dataset.id = product.id;
+                newProduct.classList.add('item');
+                newProduct.innerHTML = 
+                `<div class="card">
+                <img src="/${product.image}" alt="bracelets"width="250" height="300">
+                <p>${product.name}</p>
+                <div class="price">${product.price}</div>
+                <button class="purchase">Purchase Item</button>
+            </div> `;
+                listProductHTML.appendChild(newProduct);
+            });
+        }
+    }
