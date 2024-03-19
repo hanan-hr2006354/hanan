@@ -213,7 +213,7 @@ svg{
 }
 .icon-cart span{
     position: absolute;
-    background-color: red;
+    background-color: rgb(54, 52, 52);
     width: 30px;
     height: 30px;
     display: flex;
