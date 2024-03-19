@@ -123,7 +123,7 @@ section {
     margin-bottom: 40px;
 }
 
-.category {
+.category-necklace {
     
     display: flex;
     flex-wrap: wrap;
@@ -132,12 +132,12 @@ section {
     gap:20px;
 
 }
-.category .card{
+.category-necklace .card{
     background-color: #e3e1e1;
     padding:20px;
     border-radius: 20px;
 }
-.category img {
+.category-necklace img {
     border: solid 2px #9b9189;
     box-shadow: 0px 5px 15px rgba(241, 238, 238, 0.8);
     display: block;
@@ -146,7 +146,7 @@ section {
     height: 300px;
 }
 
-.category button {
+.category-necklace button {
     background-color:rgb(98, 98, 94) ;
     color:white;
     padding: 10px 10px;
@@ -157,7 +157,7 @@ section {
     cursor:pointer;
     
 }
-.category .price {
+.category-necklace .price {
     font-size: 1.2rem;
     text-align: center;
     padding: 0.5rem;
@@ -166,7 +166,7 @@ section {
     letter-spacing: 0.2rem
 
 }
-.category p {
+.category-necklace p {
     font-size: 1.2rem;
     text-align: center;
     padding: 1rem;
@@ -261,7 +261,7 @@ svg{
         gap: 20px;
     }
 
-    .category {
+    .category-necklace {
         display: flex;
         justify-content: space-between;
         text-align: center;
