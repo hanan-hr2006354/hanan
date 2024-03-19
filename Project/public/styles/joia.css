@@ -76,7 +76,7 @@ h1 {
 }
 
 header {
-    background-image: url("/public/images/header\ background.png");
+    background-image: url("../images/header\ background.png");
     background-size: cover;
     text-align: center;
     padding: 3% 0;
@@ -92,28 +92,42 @@ header h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-nav ul {
+/*nav ul {
     list-style: none;
     padding: 0;
     text-align: center;
     justify-content: space-between;
 }
 
-nav ul li {
+nav li {
     list-style: none;
     text-align: center;
 }
-nav ul li a {
-    display: inline-block;
+nav a {
+    display: block;
     text-decoration: none;
     color: #F2EFE3;
     padding: 0.8rem;
-    margin: 0.4rem;
 }
-nav ul li a:hover {
+nav a:hover {
     background-color: #F2EFE3;
     color: #9b9189;
-}
+}*/
+nav a{ 
+    display: block; 
+    text-decoration: none;
+    color:#F2EFE3;
+    padding: 0.4rem; 
+}  
+nav li{ 
+    width: 100%;
+    list-style: none;
+    text-align: center; 
+} 
+nav a:hover {
+    background-color:#F2EFE3;
+    color:#9b9189;  
+} 
 
 main {
     padding: 20px 0;
