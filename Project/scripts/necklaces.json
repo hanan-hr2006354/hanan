@@ -2,49 +2,63 @@
     {
         "id": 1,
         "name": "GOLD FLOWER NECKLACE",
-        "price": 200,
-        "image": "gold_flower.png"
+        "price": 20,
+        "image": "gold_flower.png.png",
+        "quantity":5
+
     },
     {
         "id": 2,
         "name": "GOLD CIRCLE NECKLACE",
-        "price": 250,
-        "image": "gold_circle.png"
+        "price": 20,
+        "image": "public/images/necklaces/gold_circle.png.png",
+        "quantity":10
     },
     {
         "id": 3,
         "name": "GOLD LAYERED NECKLACE",
-        "price": 290,
-        "image": "gold_layered.png"
+        "price": 10,
+        "image": "/public/image/necklaces/gold_layered.png.png",
+        "quantity":2
+
     },
     {
         "id": 4,
         "name": "HEART FLOWER NECKLACE",
-        "price": 200,
-        "image": "heart_flower.png"
+        "price": 20,
+        "image": "heart_flower.png.jpg",
+        "quantity":3
+
     },
     {
         "id": 5,
         "name": "JUNIE NECKLACE",
-        "price": 300,
-        "image": "junie.png"
+        "price": 30,
+        "image": "junie.png",
+        "quantity":2
     },
     {
         "id": 6,
         "name": "SATURN PLANET NECKLACE",
-        "price": 200,
-        "image": "planet.png"
+        "price": 20,
+        "image": "planet.png",
+        "quantity":8
+
     },
     {
         "id": 7,
         "name": "MOON FLOWER NECKLACE",
-        "price": 200,
-        "image": "moon.png"
+        "price": 20,
+        "image": "moon.png",
+        "quantity":1
+
     },
     {
         "id": 8,
         "name": "V SHAPED NECKLACE",
-        "price": 200,
-        "image": "public/images/necklaces/v.png"
+        "price": 10,
+        "image": "public/images/necklaces/v.png",
+        "quantity":8
+
     }
 ]

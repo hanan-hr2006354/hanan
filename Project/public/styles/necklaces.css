@@ -175,6 +175,14 @@ section {
     letter-spacing: 0.2rem;
 }
 
+.category-necklace  .quantity{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.2rem
+}
+
 .our-story p {
     font-size: 1.2rem;
     font-weight: bold;

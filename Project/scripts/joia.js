@@ -1,3 +1,4 @@
+
 let listProductHTML = document.querySelector('.category-necklace');
 let products=[]
 const initApp = () => {
@@ -13,7 +14,6 @@ const initApp = () => {
 initApp();
 
 const addDataToHTML = () => {
-
         if(products.length > 0) // if has data
         {
             products.forEach(product => {
@@ -22,9 +22,10 @@ const addDataToHTML = () => {
                 newProduct.classList.add('item');
                 newProduct.innerHTML = 
                 `<div class="card">
-                <img src="/public/images/necklaces/${product.image}" alt="bracelets"width="250" height="300">
+                <img src="${product.image}" alt="bracelets"width="250" height="300">
                 <p>${product.name}</p>
-                <div class="price">${product.price}</div>
+                <div class="price">$${product.price}</div>
+                <div class="quantity">Quantity: ${product.quantity}</div>
                 <button class="purchase">Purchase Item</button>
             </div> `;
                 listProductHTML.appendChild(newProduct);
