@@ -22,7 +22,7 @@ const addDataToHTML = () => {
                 newProduct.classList.add('item');
                 newProduct.innerHTML = 
                 `<div class="card">
-                <img src="/${product.image}" alt="bracelets"width="250" height="300">
+                <img src="/public/images/necklaces/${product.image}" alt="bracelets"width="250" height="300">
                 <p>${product.name}</p>
                 <div class="price">${product.price}</div>
                 <button class="purchase">Purchase Item</button>
