@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="/public/styles/login.css">
+
 </head>
 <body class="Login">
     <nav>
@@ -20,18 +21,23 @@
     </header>
     <main>
     
-      <form action="#" method="post">
-        <label for="username">Username</label>
-        <input type="username" id="username" name="username" required />
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required />
+      <form id="loginForm" action="#" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    
         <input type="submit" value="Login" class="button">
-      </form>
+
+    </form>
+    
 
     </main>
     <footer>
       <p class="footer">JOIA © 2024</p>
     </footer>
-    <script src="/public/scripts/login.js"></script>
+<script src="/public/scripts/login.js"></script>
+
   </body>
 </html>

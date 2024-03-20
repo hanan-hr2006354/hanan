@@ -63,30 +63,33 @@ form {
     max-width: 500px;
     padding: 1em;
   }
-main input[type="username"],
-main input[type="password"],
-main input[type="submit"] { /* Added the submit button here as well */
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Include padding in the width */
-    margin-top: 5px; /* Adjust as needed */
-}
 
-input[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    display: block;
-    margin-top: 20px;
-}
-
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
+  
+  form input[type="text"],
+  form input[type="password"],
+  form input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 5px;
+  }
+  
+  form input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: block;
+      margin-top: 20px;
+  }
+  
+  form input[type="submit"]:hover {
+      background-color: #0056b3;
+  }
+  
 
 
 footer {
