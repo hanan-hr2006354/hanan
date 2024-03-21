@@ -1,0 +1,40 @@
+[
+    {
+        "id": 31,
+        "name": "PEARL RINGS",
+        "price": 20,
+        "image": "rings/3-packgempearl.png",
+        "quantity":5
+
+    },
+    {
+        "id": 32,
+        "name": "GOLD RINGS",
+        "price": 20,
+        "image": "rings/gold1.jpeg",
+        "quantity":10
+    },
+    {
+        "id": 33,
+        "name": "GOLD RINGS",
+        "price": 10,
+        "image": "rings/gold2.jpeg",
+        "quantity":2
+
+    },
+    {
+        "id": 34,
+        "name": "GOLD HUG NECKLACE",
+        "price": 20,
+        "image": "rings/goldadjustable hugring.png",
+        "quantity":3
+
+    },
+    {
+        "id": 35,
+        "name": "JUNIE NECKLACE",
+        "price": 30,
+        "image": "rings/goldheartcharm.png",
+        "quantity":2
+    }
+]
