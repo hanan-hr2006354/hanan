@@ -24,11 +24,13 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         
         // Redirect based on user type
         if (loggedInCustomer) {
-            window.location.href = 'joia.html';
+            window.location.href = `/public/joia.html?username=${username}`;
+
+
         } else if (loggedInSeller) {
-            window.location.href = 'joia.html';
+            window.location.href = '/public/joia.html';
         } else if (loggedInAdmin) {
-            window.location.href = 'joia.html';
+            window.location.href = '/public/joia.html';
         } else {
             document.getElementById('loginMessage').textContent = 'Invalid username or password.';
         }

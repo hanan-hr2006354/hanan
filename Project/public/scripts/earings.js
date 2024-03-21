@@ -17,22 +17,20 @@ const getNecklaces = () => {
                 const productPrice=parseFloat(button.getAttribute('price'));
                 const productQuanity=parseFloat(button.getAttribute('quantity'));
 
-                fetch('customer.json')
-                .then(response => response.json())
-                .then(customers => {
-                    // Find Alice's information in the array
-                    const customer = customers.find(c => c.name === "Mohammed");
-                    
-                    // Check if Alice's balance is sufficient
-                    if (customer && customer.balance >= productPrice) {
+                fetch('users.json')
+                .then(response=>response.json())
+                .then(data=>{
+                    const customers=data.customers; 
+                    const customer=customers.find(c=>c.username==="dalalnayem");
+                    if (customer && customer.balance>=productPrice) {
                         console.log(customer.balance);
-                        // Redirect to the purchase page with Alice's details
-                        window.location.href = `/public/purchase.html?id=${productId}&price=${productPrice}&pname=${productName}&pimage=${productImage}&pquantity=${productQuanity}&cname=${customer.name}&cbalance=${customer.balance}`;
+                        // Redirect to the purchase page with customer's details
+                        window.location.href=`/public/purchase.html?id=${productId}&price=${productPrice}&pname=${productName}&pimage=${productImage}&pquantity=${productQuanity}&cname=${customer.name}&cbalance=${customer.balance}`;
                     } else {
-                        alert('Alice has insufficient balance to make the purchase.');
+                        alert('insufficient balance to make the purchase.');
                     }
+                
                 });
-            
             });
         });
     });
