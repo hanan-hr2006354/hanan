@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOIA - Jewelry Platform</title>
-    <link rel="stylesheet" href="/public/styles/rings.css">
+    <link rel="stylesheet" href="/public/styles/seller.css">
 
 </head>
 <body>
@@ -20,8 +20,8 @@
                         <h1> Welcome to JOIA </h1>
             <nav id="main-menu">
                 <ul>
-                    <li><a href="/public/login.html">Login</a></li> <!-- Link to login page -->
-                    <li><a href="/public/joia.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li> <!-- Link to login page -->
+                    <li><a href="#middle-section">Home</a></li>
                     <li><a href="#gifts-section">Gifts</a></li>
                     <li><a href="#we-offer">What We Offer</a></li>
                     <li><a href="#our-story">Our Story</a></li>
@@ -43,11 +43,16 @@
 
             <div id="middle-section">
                 <section id="gifts-section">
-                    <h1> Shop by Category </h1>
-                    <div id="category-rings" class="category-rings">
-                        </div>
-            <script src="/public/scripts/rings.js"></script>
+                    <a href="addItem.html"><button class="add" for="submit">Add An Item</button></a>
+                    <h1> Items Selling </h1>
+                    <div class="seller-category">
+                      
                     </div>
+                    <h1> Sold Out Items</h1>
+                    <div class="soldseller-category">
+                      
+                    </div>
+                </section>
                 <section id="our-story">
                     <h1> Our Story </h1>
                     <div class="our-story">
@@ -58,10 +63,11 @@
                             You can be assured that no two pieces are ever alike, making it even more
                             special as it is passed on from generation to generation.
                         </p>
-                        <img src="/public/images/our-story.png" alt="our-story" width="250" height="250">
+                        <img src="images/our-story.png" alt="our-story" width="250" height="250">
                     </div>
                 </section>
             </div>
+       
        
             <div class="Contact-us">
                 <div>
@@ -85,6 +91,6 @@
     </div>
 
     <!-- Add JavaScript files here -->
-
+    <script src="/public/scripts/seller.js"></script>
 </body>
 </html>

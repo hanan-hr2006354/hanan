@@ -22,7 +22,8 @@
         "username": "hananrashid",
         "shipping_address": "789 St No, AlSaad, Qatar",
         "password": "password123",
-        "balance": 300
+        "balance": 300,
+        "bought":[]
       }
     ],
     "seller": [
@@ -30,7 +31,39 @@
         "company_name": "JOIA Company",
         "username": "joiaseller",
         "password": "password123",
-        "bank_account": "123456789"
+        "bank_account": "123456789",
+        "sellings":[
+          {
+            "id": 17,
+            "name": "BOTTEGA EARRINGS",
+            "price": 35,
+            "image": "earrings/bottega.png",
+            "quantity": 5
+          },
+          {
+            "id": 18,
+            "name": "GOLD DENSE HOOPS",
+            "price": 45,
+            "image": "earrings/goldhoops.jpeg",
+            "quantity": 10
+          },{
+            "id": 9,
+            "name": "CERECENT MOON BRACELET",
+            "price": 35,
+            "image": "bracelets/crecent_moon.jpg",
+            "quantity": 5
+          },
+          {
+            "id": 10,
+            "name": "GOLD FLOWER BRACELET",
+            "price": 45,
+            "image": "bracelets/gold_flower.jpg",
+            "quantity": 10
+          }
+        ]
+
+
+        
       }
     ],
     "admin": [

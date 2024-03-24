@@ -1,6 +1,7 @@
 
 let listProductHTML = document.querySelector('.category-rings');
-
+const loggedin=localStorage.getItem('loggedInUser');
+console.log(loggedin)
 const getBracelet = () => {
     fetch('rings.json')
     .then(response => response.json())
@@ -17,11 +18,11 @@ const getBracelet = () => {
                 const productPrice=parseFloat(button.getAttribute('price'));
                 const productQuanity=parseFloat(button.getAttribute('quantity'));
 
-                fetch('customer.json')
+                fetch('users.json')
                 .then(response => response.json())
                 .then(customers => {
                     // Find Alice's information in the array
-                    const customer = customers.find(c => c.name === "Mohammed");
+                    const customer = customers.find(c => c.name===loggedin);
                     
                     // Check if Alice's balance is sufficient
                     if (customer && customer.balance >= productPrice) {

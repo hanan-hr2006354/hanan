@@ -31,33 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
                   userBalance=userBalance-totalPrice;
                     console.log(userBalance);
   
-                    const fs=require('fs');//used to read and wrie to json
-                    fs.readFile('customer.json', 'utf8', (err,data) => {
-                        if (err) {
-                            console.error('Not Able to Read File:', err);
-                            return;}
-                        try {
-                            const users=JSON.parse(data);
-                            const userFound=users.find(u=>u.name===userName);
-                            console.log(userFound.name)
-                            if (userFound){
-                                userFound.balance=userBalance; // Update the user balance
-                                //read and write back
-                                fs.writeFile('customer.json', JSON.stringify(users, null, 2),(err)=>{
-                                    if (err) {
-                                        console.error('Error writing to customer.json file:', err);
-                                        return;}
-                                    console.log('Customer balance updated successfully.');
-                                });
-                            } else {
-                                console.error('User not found in customer.json.');
-                            }
-                        } catch (err) {
-                            console.error('Error parsing JSON data:', err);
-                        }
-                    });
-  
-  
                 } else {
                     alert('Insufficient balance to make the purchase.');
                 }

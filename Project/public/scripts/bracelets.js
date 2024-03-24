@@ -1,6 +1,7 @@
 
 let listProductHTML = document.querySelector('.category-bracelet');
-
+const loggedin=localStorage.getItem('loggedInUser');
+console.log(loggedin)
 const getBracelet = () => {
     fetch('bracelets.json')
     .then(response => response.json())
@@ -21,7 +22,7 @@ const getBracelet = () => {
                 .then(response=>response.json())
                 .then(data=>{
                     const customers=data.customers; 
-                    const customer=customers.find(c=>c.username==="dalalnayem");
+                    const customer=customers.find(c=>c.username===loggedin);
                     if (customer && customer.balance>=productPrice) {
                         console.log(customer.balance);
                         // Redirect to the purchase page with customer's details

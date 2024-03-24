@@ -33,7 +33,11 @@ input{
     height:90px;
 }
 
-
+header {
+    background-color: #d7d3d3;    
+    color: #fff;
+    padding: 20px 0;
+}
 label{
     font-size: 50px;
 }
@@ -44,33 +48,54 @@ h1 {
     padding-bottom: 4rem;
 }
 
+header {
+    background-image: url("/public/images/header\ background.png");
+    background-size: cover;
+    text-align: center;
+    padding: 3% 0;
+}
+
+header img {
+    margin-left: 90%;
+}
+
+header h1 {
+    margin-bottom: 4rem;
+    font-size: 3rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 
 main {
     padding: 20px 0;
 }
 
+section {
+    margin-bottom: 40px;
+}
 
-.one-purchase-container {
+.items-category {
+    
     display: flex;
     flex-wrap: wrap;
-    justify-content: column;
+    justify-content: space-around;
     grid-template-columns: repeat(4,1fr);
     gap:20px;
 
 }
-.one-purchase-container .card{
+.items-category .card{
     background-color: #e3e1e1;
     padding:20px;
     border-radius: 20px;
 }
-.one-purchase-container .card {
+.items-category .card {
     background-color: #e3e1e1;
     padding: 20px;
     border-radius: 20px;
     text-align: center; /* Center-align content */
 }
 
-.one-purchase-container img {
+.items-category img {
     border: solid 2px #9b9189;
     box-shadow: 0px 5px 15px rgba(241, 238, 238, 0.8);
     margin: 0 auto; /* Center-align image */
@@ -79,9 +104,9 @@ main {
     height: 300px;
 }
 
-.one-purchase-container .price,
-.one-purchase-container p,
-.one-purchase-container .quantity {
+.items-category .price,
+.items-category p,
+.items-category .quantity {
     font-size: 1.2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 0.2rem;
@@ -174,7 +199,7 @@ svg{
         gap: 20px;
     }
 
-    .one-purchase-container {
+    .seller-category {
         display: flex;
         justify-content: space-between;
         text-align: center;

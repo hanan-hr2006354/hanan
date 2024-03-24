@@ -1,17 +1,6 @@
-
 let listProductHTML = document.querySelector('.category-necklace');
-// Create URLSearchParams object to parse query string
-const url = new URLSearchParams(window.location.search);
-
-// Log the entire query string
-console.log(window.location.search);
-
-// Attempt to extract the username parameter
-const userName = url.get('username');
-
-// Log the extracted username
-console.log(userName);
-
+const loggedin=localStorage.getItem('loggedInUser');
+console.log(loggedin)
 const getNecklaces = () => {
     fetch('necklaces.json')
     .then(response => response.json())
@@ -32,7 +21,7 @@ const getNecklaces = () => {
                 .then(response=>response.json())
                 .then(data=>{
                     const customers=data.customers; 
-                    const customer=customers.find(c=>c.username==="dalalnayem");
+                    const customer=customers.find(c=>c.username===loggedin);
                     if (customer && customer.balance >= productPrice) {
                         console.log(customer.balance);
                         // Redirect to the purchase page with customer's details
@@ -69,6 +58,4 @@ const addDataToHTML = () => {
             });
         }
     }
-
-
 

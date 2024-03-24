@@ -13,11 +13,17 @@ import path from 'path';
 // });
 
 // 
+import fs from 'fs-extra';
+import express from 'express';
+import path from 'path';
+import cors from 'cors'; // Import the cors module
+
 export default class Server { // Renamed for generality
     constructor() {
         this.app = express(); // Initialize Express app
         this.app.use(express.json()); // Middleware to parse JSON bodies
-        
+        this.app.use(cors()); // Enable CORS middleware
+
         this.usersPath = path.join(process.cwd(), 'data/users.json'); // Path to users data
         this.itemsPath = path.join(process.cwd(), 'data/items.json'); // Path to items data
         
@@ -70,7 +76,26 @@ export default class Server { // Renamed for generality
                 res.sendStatus(500);
             }
         });
+
+        this.app.post('/api/purchase', async (req, res) => {
+            console.log("Reached");
+            try {
+                const { username, totalPrice } = req.body;
+                const success = await this.updateUserBalance(username, totalPrice);
+                if (success) {
+                    res.sendStatus(200);
+                } else {
+                    res.status(404).send('User not found');
+                }
+            } catch (error) {
+                console.error('Error updating user balance:', error);
+                res.sendStatus(500);
+            }
+        });
+        
     }
+
+    
 
     start(port = 3000) {
         this.app.listen(port, () => {
