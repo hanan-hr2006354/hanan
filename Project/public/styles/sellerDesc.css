@@ -98,44 +98,6 @@ section {
     margin-top: 10px; /* Add margin between each element */
 }
 
-.our-story p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 0.2rem;
-    justify-content: center;
-    padding: 5rem;
-
-}
-
-.our-story img {
-    border: solid 2px #9b9189;
-    box-shadow: 0px 5px 15px rgba(241, 238, 238, 0.8);
-    display: block;
-    margin: 0 ;
-    width: 300px;
-    height: 300px;
-}
-
-.Contact-us {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    background: #484848;
-    color: white;
-    padding: 2rem;
-    display:inline-flexbox
-}
-
-
-.Contact-us h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.Contact-us p {
-    margin-bottom: 15px;
-}
 
 
 footer {
@@ -153,36 +115,13 @@ svg{
     width: 30px;
 }
 
-  .icon-cart{
-    position: relative;
-    color:black;
-    right:-45%;
 
-}
-.icon-cart span{
-    position: absolute;
-    background-color: rgb(54, 51, 51);
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: #fff;
-    top: 50%;
-    right: 50%;
-}
 
 @media screen and (min-width: 40rem) {
     nav ul {
         display: flex;
     }
 
-    .our-story {
-        display: grid;
-        grid-template-columns: auto auto;
-        gap: 20px;
-    }
 
     .seller-category {
         display: flex;

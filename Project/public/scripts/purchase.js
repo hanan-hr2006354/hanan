@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
         <img src="/public/images/${nImage}" alt="Item Image">
         <h4>Product Name: ${nName}</h4>
         <h4>Product Price: ${nPrice}</h4>
-        <p>Description: </p>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity" name="quantity" required min="1" max="${nQuantity}">
         <label for="shipping_address">Shipping Address:</label>
