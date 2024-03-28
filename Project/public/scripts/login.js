@@ -26,8 +26,24 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
                 window.location.href = '/public/joia.html';
             }
         } else {
-            document.getElementById('loginMessage').textContent = 'Invalid username or password.';
+            // document.getElementById('loginMessage').textContent = 'Invalid username or password.';
+            alert('Invalid Username or Password.')
         }
     })
     .catch(error => console.error('Error fetching user data:', error));
 });
+const items = localStorage.getItem('users');
+let arrayOfItems = [];
+if (items) {
+    arrayOfItems = JSON.parse(items); //prevents overwriting changes
+} else {
+    fetch('data/users.json')
+        .then(response => response.json())
+        .then(data => {
+            arrayOfItems = data;
+            localStorage.setItem('users', JSON.stringify(arrayOfItems));
+        });
+
+
+    
+}

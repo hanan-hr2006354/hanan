@@ -1,47 +1,76 @@
+const loggedInUser=localStorage.getItem('loggedInUser');
+const users=localStorage.getItem('users');
+let allusers=[];
+allusers=JSON.parse(users);
+
+const seller=allusers.seller.find(seller=>seller.username===loggedInUser);
+
 document.addEventListener('DOMContentLoaded', function() {
     const addButton = document.getElementById('add');
 
     addButton.addEventListener('click', function() {
-        // Retrieve values from input fields
-        const itemImage = document.getElementById('itemimage').value;
-        const itemName = document.getElementById('itemname').value;
-        const itemPrice = document.getElementById('itemprice').value;
-        const itemQuantity = document.getElementById('itemquantity').value;
-        
-        const newItem = {
-            image: itemImage,
-            name: itemName,
-            price: itemPrice,
-            quantity: itemQuantity
-        };
-        
-        const sellerUsername = localStorage.getItem('loggedInUser');
-        fetch('/update-users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newItem)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+        const itemcategory = document.getElementById('itemcategory').value;
+        const itemImageInput = document.getElementById('itemimage'); 
+        const itemImage = itemImageInput.files[0];
+        if (itemImage instanceof Blob) {
+            const itemName = document.getElementById('itemname').value;
+            const itemPrice = document.getElementById('itemprice').value;
+            const itemQuantity = document.getElementById('itemquantity').value;
+                const newItem = {
+                    id:Date.now(),
+                    name: itemName,
+                    price: itemPrice,
+                    image: `${itemcategory.toLowerCase()}/${itemImage.name}`,
+                    quantity: itemQuantity
+                }
+            console.log('New item:', newItem);
+
+            //updating existing item
+        const existingItem=getExistingItem(itemName);
+        if (existingItem) {
+            
+            const updateQuantity=confirm(`Item '${itemName}'already exists. Do you want to see your sales on the product?`);
+            if (updateQuantity) {
+                localStorage.setItem('selectedProduct', JSON.stringify(existingItem));
+                window.location.href="/public/sellerDesc.html"
+                const update="true";
+                localStorage.setItem('sellerUpdating', JSON.stringify(update));
             }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Data updated successfully:', data);
-            // You can handle success response here if needed
-        })
-        .catch(error => {
-            console.error('Error updating data:', error);
-            // You can handle error here if needed
-        });
-        
-        // Clear input fields after adding the item
+
         document.getElementById('itemimage').value = '';
         document.getElementById('itemname').value = '';
         document.getElementById('itemprice').value = '';
         document.getElementById('itemquantity').value = '';
+    
+    }else{
+        let items = localStorage.getItem('items');
+        items = JSON.parse(items) || [];
+
+        // Find the category in items localStorage
+        const categoryIndex=items.findIndex(category=>category.category===itemcategory);
+        console.log(categoryIndex)
+        if (categoryIndex!==-1) {
+            items[categoryIndex].items.push(newItem);
+        } else {
+            items.push({
+                category:itemcategory,
+                items:[newItem]
+            });
+        }
+        localStorage.setItem('items', JSON.stringify(items));
+        if (seller) {
+            seller.sellings.push(newItem);
+            localStorage.setItem('users', JSON.stringify(allusers));
+        }
+        window.location.href="/public/seller.html"
+
+    }}
     });
 });
+function getExistingItem(itemName){
+    for (const item of seller.sellings) {
+        if (item.name.toLowerCase()===itemName.toLowerCase()) {
+            return item;
+        }
+    }
+}

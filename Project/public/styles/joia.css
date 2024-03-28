@@ -238,8 +238,38 @@ svg{
     top: 50%;
     right: 50%;
 }
+.logout{
+    background-color: #6a5d35;
+    color:white;
+    border-color:  #6a5d35;
+    width:100px;
+    height:35px;
+    position: relative;
+    border-radius: 7px;
+    left:50px;
+    top:0px;
+
+}
+.profile{
+    background-color: #6a5d35;
+    color:white;
+    border-color:  #6a5d35;
+    width:100px;
+    height:35px;
+    position: relative;
+    border-radius: 7px;
+    left:50px;
+    top:0%;
+
+}
 
 @media screen and (min-width: 40rem) {
+    .icon-cart{
+        position: relative;
+        color:black;
+        right:-41%;
+    
+    }
     nav ul {
         display: flex;
     }

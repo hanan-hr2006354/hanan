@@ -114,6 +114,30 @@ nav ul li a:hover {
     background-color: #F2EFE3;
     color: #9b9189;
 }
+.logout{
+    background-color: #6a5d35;
+    color:white;
+    border-color:  #6a5d35;
+    width:100px;
+    height:35px;
+    position: relative;
+    border-radius: 7px;
+    left:50px;
+    top:0px;
+
+}
+.profile{
+    background-color: #6a5d35;
+    color:white;
+    border-color:  #6a5d35;
+    width:100px;
+    height:35px;
+    position: relative;
+    border-radius: 7px;
+    left:50px;
+    top:0px;
+
+}
 
 main {
     padding: 20px 0;
@@ -123,30 +147,31 @@ section {
     margin-bottom: 40px;
 }
 
-.category-bracelet {
+.category {
     
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     grid-template-columns: repeat(4,1fr);
-    gap:20px;
+    gap:40px;
 
 }
-.category-bracelet .card{
+.category .card{
     background-color: #e3e1e1;
     padding:20px;
     border-radius: 20px;
+    width:400px;
+    height:560px;
 }
-.category-bracelet img {
+.category img {
     border: solid 2px #9b9189;
     box-shadow: 0px 5px 15px rgba(241, 238, 238, 0.8);
     display: block;
     margin: 0 auto;
-    width: 250px;
+    width: 280px;
     height: 300px;
 }
 
-.category-bracelet button {
+.category button {
     background-color:rgb(98, 98, 94) ;
     color:white;
     padding: 10px 10px;
@@ -157,7 +182,7 @@ section {
     cursor:pointer;
     
 }
-.category-bracelet .price {
+.category .price {
     font-size: 1.2rem;
     text-align: center;
     padding: 0.5rem;
@@ -166,7 +191,7 @@ section {
     letter-spacing: 0.2rem
 
 }
-.category-bracelet p {
+.category p {
     font-size: 1.2rem;
     text-align: center;
     padding: 1rem;
@@ -175,7 +200,7 @@ section {
     letter-spacing: 0.2rem;
 }
 
-.category-bracelet  .quantity{
+.category  .quantity{
     font-size: 1.2rem;
     text-align: center;
     padding: 0.5rem;
@@ -244,21 +269,26 @@ svg{
     right:-45%;
 
 }
-.icon-cart span{
-    position: absolute;
-    background-color: rgb(54, 51, 51);
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: #fff;
-    top: 50%;
-    right: 50%;
-}
 
 @media screen and (min-width: 40rem) {
+    .icon-cart{
+        position: relative;
+        color:black;
+        right:-40%;
+    
+    }
+    /* .logout{
+        background-color: #6a5d35;
+        color:white;
+        border-color:  #6a5d35;
+        width:100px;
+        height:35px;
+        position: relative;
+        border-radius: 7px;
+        left:10px;
+        top:0px;
+    
+    } */
     nav ul {
         display: flex;
     }
@@ -269,9 +299,8 @@ svg{
         gap: 20px;
     }
 
-    .category-bracelet {
+    .category {
         display: flex;
-        justify-content: space-between;
         text-align: center;
         flex-wrap: wrap;
     }

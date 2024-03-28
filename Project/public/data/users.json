@@ -6,7 +6,9 @@
         "username": "dalalnayem",
         "shipping_address": "123 St No, Doha, Qatar",
         "password": "password123",
-        "balance": 100
+        "balance": 1000,
+        "purchase":[]
+
       },
       {
         "name": "Mariam",
@@ -14,7 +16,9 @@
         "username": "mariamalshaikh",
         "shipping_address": "456 St No, Alrayaan, Qatar",
         "password": "password123",
-        "balance": 140
+        "balance": 500,
+        "purchase":[]
+
       },
       {
         "name": "Hanan",
@@ -22,8 +26,8 @@
         "username": "hananrashid",
         "shipping_address": "789 St No, AlSaad, Qatar",
         "password": "password123",
-        "balance": 300,
-        "bought":[]
+        "balance": 1500,
+        "purchase":[]
       }
     ],
     "seller": [
@@ -38,27 +42,35 @@
             "name": "BOTTEGA EARRINGS",
             "price": 35,
             "image": "earrings/bottega.png",
-            "quantity": 5
+            "quantity": 5,
+            "purchaseusernames":[
+            ]
+
           },
           {
             "id": 18,
             "name": "GOLD DENSE HOOPS",
             "price": 45,
             "image": "earrings/goldhoops.jpeg",
-            "quantity": 10
+            "quantity": 10,
+            "purchaseusernames":[]
+
           },{
             "id": 9,
             "name": "CERECENT MOON BRACELET",
             "price": 35,
             "image": "bracelets/crecent_moon.jpg",
-            "quantity": 5
+            "quantity": 5,
+            "purchaseusernames":[]
+
           },
           {
             "id": 10,
             "name": "GOLD FLOWER BRACELET",
             "price": 45,
             "image": "bracelets/gold_flower.jpg",
-            "quantity": 10
+            "quantity": 10,
+            "purchaseusernames":[]
           }
         ]
 
