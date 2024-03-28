@@ -14,9 +14,11 @@ document.getElementById('sold').value = soldouts.length;
 
 function calculateTotalPurchasePrice(item) {
     let totalPrice = 0;
-    item.purchaseusernames.forEach(purchase => {
-        totalPrice += purchase.purchase.price;
-    });
+    if (item.purchaseusernames) { // Check if item.purchaseusernames is defined
+        item.purchaseusernames.forEach(purchase => {
+            totalPrice += purchase.purchase.price;
+        });
+    }
     return totalPrice;
 }
 
@@ -30,8 +32,8 @@ soldouts.forEach(item => {
         <td>${item.quantity}</td>
         <td>${item.price} $</td>
         <td>${calculateTotalPurchasePrice(item)} $</td>
-        <td>${item.purchaseusernames.map(username=> `${username.username} [ (${username.purchase.quantity}) ]`).join(' - ')}</td> 
-    `;
+        <td>${item.purchaseusernames ? item.purchaseusernames.map(username=> `${username.username} [ (${username.purchase.quantity}) ]`).join(' - ') : ''}</td>
+        `;
     soldTable.appendChild(row); // Append the created row to the table body
 });
 
@@ -49,8 +51,8 @@ notSoldItems.forEach(item => {
         <td>${item.quantity}</td>
         <td>${item.price} $</td>
         <td>${calculateTotalPurchasePrice(item)} $</td>
-        <td>${item.purchaseusernames.map(username => `${username.username} [ (${username.purchase.quantity}) ]`).join(', ')}</td> 
-    `; fillSoldTable.appendChild(row);
+        <td>${item.purchaseusernames ? item.purchaseusernames.map(username=> `${username.username} [ (${username.purchase.quantity}) ]`).join(' - ') : ''}</td>
+        `; fillSoldTable.appendChild(row);
 });
 
 
