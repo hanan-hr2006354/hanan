@@ -52,7 +52,7 @@ notSoldItems.forEach(item => {
         <td>${item.price} $</td>
         <td>${calculateTotalPurchasePrice(item)} $</td>
         <td>${item.purchaseusernames ? item.purchaseusernames.map(username=> `${username.username} [ (${username.purchase.quantity}) ]`).join(' - ') : ''}</td>
-        `; fillSoldTable.appendChild(row);
+    `; fillSoldTable.appendChild(row);
 });
 
 
