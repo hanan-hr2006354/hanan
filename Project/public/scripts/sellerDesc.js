@@ -23,6 +23,10 @@ if (selectedProduct) {
             if (additionalQuantity!==null) { // Check if user clicked 'Cancel'
                 document.getElementById('itemquantity').value=(parseInt(selectedProduct.quantity)+parseInt(additionalQuantity));
             }
+            if(selectedProduct.quantity==="sold"){
+                document.getElementById('itemquantity').value=additionalQuantity;
+
+            }
             localStorage.removeItem('sellerUpdating');
             
             const sellerIndex=allusers.seller.findIndex(seller=>seller.username===loggedInUser);

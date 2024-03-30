@@ -1,5 +1,5 @@
 
-
+//Hanan
 const loggedin=localStorage.getItem('loggedInUser');
 const choosenCategory = localStorage.getItem('choosenCategory');
 const items = localStorage.getItem('items');
@@ -28,31 +28,48 @@ document.querySelector('.logout').addEventListener('click', () => {
 });
 
 
-let listOfItems = document.getElementById('category');
+        let listOfItems = document.getElementById('category');
 
-let listOfChoosen = [];
-let category = [];
-if (choosenCategory == 1) {
-    category = arrayOfItems.find(item =>item.category==="necklaces");
-    
-}
-if (choosenCategory == 2) {
-    category = arrayOfItems.find(item => item.category==="bracelets");
-}
-if (choosenCategory == 3) {
-    category = arrayOfItems.find(item => item.category==="rings");
-}
-if (choosenCategory == 4) {
-    category = arrayOfItems.find(item => item.category==="earrings");
-}
+        let listOfChoosen = [];
+        let category = [];
+        if (choosenCategory == 1) {
+            category = arrayOfItems.find(item => item.category === "necklaces");
+        }
+        if (choosenCategory == 2) {
+            category = arrayOfItems.find(item => item.category === "bracelets");
+        }
+        if (choosenCategory == 3) {
+            category = arrayOfItems.find(item => item.category === "rings");
+        }
+        if (choosenCategory == 4) {
+            category = arrayOfItems.find(item => item.category === "earrings");
+        }
+        
 
-if (category) {
-    listOfChoosen = category.items;
+        if (category) {
+            listOfChoosen = category.items;
 
-    const choosenItemsHtml = listOfChoosen.map(item => addDataToHTML(item)).join('');
-    listOfItems.innerHTML = choosenItemsHtml;
-}
+            const choosenItemsHtml = listOfChoosen.map(item=>addDataToHTML(item)).join('');
+            listOfItems.innerHTML = choosenItemsHtml;
+            addPurchaseButtonListeners();
+        }
 
+
+
+        document.querySelector('.search-button').addEventListener('click', () => {
+            const searchInput=document.getElementById('searchInput').value.trim().toLowerCase();
+            const filteredItems=listOfChoosen.filter(item =>{
+                return item.name.toLowerCase().includes(searchInput);});
+            if (filteredItems.length>0) {
+                const filteredItemsHtml=filteredItems.map(item=>addDataToHTML(item)).join('');
+                listOfItems.innerHTML=filteredItemsHtml;
+                addPurchaseButtonListeners();
+            } else {
+                listOfItems.innerHTML='<p>SORRY! WE DONT SELL THIS ITEM IN THIS CATEGORY</p>';
+            }
+        });
+        
+        
 function addDataToHTML(item) {
     return `
         <div class="item" id="${item.id}">
@@ -65,6 +82,8 @@ function addDataToHTML(item) {
             </div>
         </div>`;
 }
+
+function addPurchaseButtonListeners() {
 document.querySelectorAll('.purchase_button').forEach(button => {
     button.addEventListener('click', () => {
         const productId = button.getAttribute('id');
@@ -72,22 +91,31 @@ document.querySelectorAll('.purchase_button').forEach(button => {
         const productImage = button.getAttribute('image'); //getting the necessary url's
         const productPrice = parseFloat(button.getAttribute('price'));
         const productQuantity = parseFloat(button.getAttribute('quantity'));
-        fetch('data/users.json')
-            .then(response => response.json())
-            .then(data => {
-                const customers = data.customers; 
-                const customer = customers.find(c => c.username === loggedin);
-                if(loggedin ){ if (customer && customer.balance >= productPrice) {
-                    console.log(customer.balance);
-                    // Redirect to the purchase page with customer's details
-                    window.location.href = `/public/purchase.html?id=${productId}&price=${productPrice}&pname=${productName}&pimage=${productImage}&pquantity=${productQuantity}&cname=${customer.name}&cbalance=${customer.balance}`;
-                } else {
-                    alert('Insufficient balance to make the purchase.');
-                }}else{
-                    alert('Please Log in.');
 
-                }
-               
-            });
+        if (isNaN(productQuantity) || productQuantity <= 0) {
+            alert('Item is sold out.');
+            return;
+        }
+
+        // Proceed with purchase if user is logged in and has sufficient balance
+        if (loggedin) {
+            fetch('data/users.json')
+                .then(response => response.json())
+                .then(data => {
+                    const customers = data.customers;
+                    const customer = customers.find(c => c.username===loggedin);
+                    if (customer && customer.balance >= productPrice) {
+                        console.log(customer.balance);
+                        // Redirect to the purchase page with customer's details
+                        window.location.href = `/public/purchase.html?id=${productId}&price=${productPrice}&pname=${productName}&pimage=${productImage}&pquantity=${productQuantity}&cname=${customer.name}&cbalance=${customer.balance}`;
+                    } else {
+                        alert('Insufficient balance to make the purchase.');
+                    }
+                })
+                .catch(error => console.error('Error fetching user data:', error));
+        } else {
+            alert('Please log in to make a purchase.');
+        }
     });
 });
+}

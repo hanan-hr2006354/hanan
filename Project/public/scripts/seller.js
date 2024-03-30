@@ -51,3 +51,30 @@ document.querySelector('.logout').addEventListener('click', () => {
     window.location.href = '/public/login.html'; 
 });
 
+
+// Function to filter seller's items based on search query
+function filterItemsBySearch(query) {
+    const filteredItems = arrayOfusers.seller.map(seller => seller.sellings).flat().filter(item => {
+        return item.name.toLowerCase().includes(query.toLowerCase());
+    });
+    return filteredItems;
+}
+
+// Function to display filtered items
+function displayFilteredItems(items) {
+    listProductHTML.innerHTML = ''; // Clear previous items
+    addDataToHTML(items); // Add filtered items to HTML
+}
+
+// Event listener for search input
+document.getElementById('searchInput').addEventListener('input', function(event) {
+    const searchQuery = event.target.value.trim(); // Get search query
+    if (searchQuery !== '') {
+        const filteredItems = filterItemsBySearch(searchQuery);
+        displayFilteredItems(filteredItems);
+    } else {
+        // If search query is empty, display all items
+        const sellerSellings = arrayOfusers.seller.map(seller => seller.sellings).flat();
+        displayFilteredItems(sellerSellings);
+    }
+});
