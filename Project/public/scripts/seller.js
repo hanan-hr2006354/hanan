@@ -1,12 +1,12 @@
 const loggedIn = localStorage.getItem('loggedInUser');
 console.log(loggedIn);
-let listProductHTML = document.querySelector('.seller-category');
-let soldHTML = document.querySelector('.soldseller-category'); 
+let listProductHTML=document.querySelector('.seller-category');
+let soldHTML=document.querySelector('.soldseller-category'); 
 
-const items = localStorage.getItem('users');
-let arrayOfusers = [];
+const items=localStorage.getItem('users');
+let arrayOfusers=[];
 
-const addDataToHTML = (sellings) => {
+const addDataToHTML=(sellings) => {
     if (sellings.length > 0) {
         sellings.forEach(product => {
             let newProduct = document.createElement('div');
@@ -19,12 +19,9 @@ const addDataToHTML = (sellings) => {
                     <div class="price">$${product.price}</div>
                     <div class="quantity">Quantity: ${product.quantity}</div>
                 </div>`;
-            if (product.quantity === "sold") {
-                soldHTML.appendChild(newProduct); 
-            } else {
-                listProductHTML.appendChild(newProduct);
-            }
-            newProduct.addEventListener('click', () => {
+           
+            listProductHTML.appendChild(newProduct);
+            newProduct.addEventListener('click', ()=>{
                 localStorage.setItem('selectedProduct', JSON.stringify(product));
                 window.location.href = 'sellerDesc.html';
             });
@@ -33,16 +30,16 @@ const addDataToHTML = (sellings) => {
 }
 
 if (items) {
-    arrayOfusers = JSON.parse(items); 
-    const sellerSellings = arrayOfusers.seller.map(seller => seller.sellings).flat();
+    arrayOfusers=JSON.parse(items); 
+    const sellerSellings=arrayOfusers.seller.map(seller=>seller.sellings).flat();
     addDataToHTML(sellerSellings);
 } else {
     fetch('data/users.json')
-        .then(response => response.json())
+        .then(response=>response.json())
         .then(data => {
             arrayOfusers = data;
             localStorage.setItem('users', JSON.stringify(arrayOfusers));
-            const sellerSellings = data.seller.map(seller => seller.sellings).flat();
+            const sellerSellings = data.seller.map(seller=>seller.sellings).flat();
             addDataToHTML(sellerSellings);
         });
 }
@@ -60,21 +57,21 @@ function filterItemsBySearch(query) {
     return filteredItems;
 }
 
-// Function to display filtered items
+// display searches items
 function displayFilteredItems(items) {
-    listProductHTML.innerHTML = ''; // Clear previous items
-    addDataToHTML(items); // Add filtered items to HTML
+    listProductHTML.innerHTML=''; 
+    addDataToHTML(items); 
 }
 
-// Event listener for search input
+// listenes to input
 document.getElementById('searchInput').addEventListener('input', function(event) {
     const searchQuery = event.target.value.trim(); // Get search query
     if (searchQuery !== '') {
-        const filteredItems = filterItemsBySearch(searchQuery);
+        const filteredItems=filterItemsBySearch(searchQuery);
         displayFilteredItems(filteredItems);
     } else {
-        // If search query is empty, display all items
-        const sellerSellings = arrayOfusers.seller.map(seller => seller.sellings).flat();
+        // search  is empty, display all items
+        const sellerSellings=arrayOfusers.seller.map(seller => seller.sellings).flat();
         displayFilteredItems(sellerSellings);
     }
 });

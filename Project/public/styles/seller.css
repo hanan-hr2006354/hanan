@@ -171,14 +171,7 @@ section {
     gap:40px;
 
 }
-.soldseller-category {
-    display: flex;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(4,1fr);
-    gap:40px;
 
-    
-}
 .seller-category .card{
     background-color: #e3e1e1;
     padding:20px;
@@ -187,24 +180,7 @@ section {
     height:560px;
 }
 
-.soldseller-category img {
-    border: solid 2px #9b9189;
-    box-shadow: 0px 5px 15px rgba(241, 238, 238, 0.8);
-    display: block;
-    margin: 0 auto;
-    width: 280px;
-    height: 300px;
-}
 
-.soldseller-category .price {
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 0.5rem;
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 0.2rem
-
-}
 .seller-category img {
     border: solid 2px #9b9189;
     box-shadow: 0px 5px 15px rgba(241, 238, 238, 0.8);
@@ -240,22 +216,7 @@ section {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 0.2rem
 }
-.soldseller-category p {
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 1rem;
-    font-weight: bolder;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 0.2rem;
-}
 
-.soldseller-category  .quantity{
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 0.5rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 0.2rem
-}
 
 .our-story p {
     font-size: 1.2rem;
@@ -348,9 +309,5 @@ svg{
         text-align: center;
         flex-wrap: wrap;
     }
-    .soldseller-category {
-        display: flex;
-        text-align: center;
-        flex-wrap: wrap;
-    }
+
 }

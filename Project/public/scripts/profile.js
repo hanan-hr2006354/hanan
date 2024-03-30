@@ -1,18 +1,15 @@
-const loggedin = localStorage.getItem('loggedInUser');
-const items = localStorage.getItem('users');
-let arrayOfItems = [];
-
+const loggedin=localStorage.getItem('loggedInUser');
+const items=localStorage.getItem('users');
+let arrayOfItems=[];
 if (items) {
-    arrayOfItems = JSON.parse(items); //prevents overwriting changes
+    arrayOfItems=JSON.parse(items); //prevents overwriting changes
 } else {
     fetch('data/users.json')
         .then(response => response.json())
         .then(data => {
             arrayOfItems = data;
             localStorage.setItem('users', JSON.stringify(arrayOfItems));
-            renderProfile();
-        });
-}
+            renderProfile();});}
 
 function addDataToHTML(item) {
     return `
@@ -23,9 +20,9 @@ function addDataToHTML(item) {
                 <div class="price">Total Price: $${item.price}</div>
                 <div class="quantity">Quantity: ${item.quantity}</div>
             </div>
-        </div>`;
-}
+        </div>`;}
 
+//display current user's informations
 function profileHtml(user) {
     return `
         <img class="pimg" src="/public/images/${user.name}.jpg" alt="">
@@ -41,21 +38,19 @@ function profileHtml(user) {
     </div>`;
 }
 
+
+//Display's all items user purchased
 if (loggedin) {
-    const user = arrayOfItems.customers.find(customer => customer.username === loggedin);
+    const user=arrayOfItems.customers.find(customer => customer.username===loggedin);
     if (user) {
         const profileHtmlString = profileHtml(user);
-        document.getElementById('profileDetails').innerHTML = profileHtmlString;
-        const purchases = user.purchase;
-        if (purchases && purchases.length > 0) { // Corrected typo here
+        document.getElementById('profileDetails').innerHTML=profileHtmlString;
+        const purchases=user.purchase;
+        if (purchases && purchases.length>0) { // Corrected typo here
             const choosenItemsHtml = purchases.map(item => addDataToHTML(item)).join('');
-            document.getElementById('category').innerHTML = choosenItemsHtml;
-        } else {
-            console.log("No purchases found for this user.");
-        }
-    } else {
-        console.log("User not found.");
-    }
-} else {
-    console.log("No user logged in.");
-}
+            document.getElementById('category').innerHTML = choosenItemsHtml;} else {
+            console.log("No purchases found for this user.");}
+    }else{
+        console.log("User not found."); }
+}else{
+    console.log("No user logged in.");}

@@ -11,20 +11,18 @@ let soldouts=[];
 if (seller) {soldouts=seller.sellings.filter(s => s.quantity==="sold");}
 document.getElementById('sold').value = soldouts.length;
 
+//Total Price calculation
 
 function calculateTotalPurchasePrice(item) {
-    let totalPrice = 0;
+    let totalPrice=0;
     if (item.purchaseusernames) { // Check if item.purchaseusernames is defined
         item.purchaseusernames.forEach(purchase => {
-            totalPrice += purchase.purchase.price;
-        });
-    }
-    return totalPrice;
-}
+            totalPrice += purchase.purchase.price;});}
+    return totalPrice;}
 
 
 const soldTable=document.getElementById('sold-purchase-history-table');
-soldouts.forEach(item => {
+soldouts.forEach(item=>{
     const row=document.createElement('tr');
     row.innerHTML=`
         <td><img src="/public/images/${item.image}" alt="Item Image"></td>
@@ -38,12 +36,11 @@ soldouts.forEach(item => {
 });
 
 
-
-let notSoldItems =[];
+let notSoldItems=[];
 if (seller) {
-    notSoldItems=seller.sellings.filter(s => s.quantity!=="sold");}
+    notSoldItems=seller.sellings.filter(s =>s.quantity!=="sold");}
 const fillSoldTable=document.getElementById('purchase-history-table');
-notSoldItems.forEach(item => {
+notSoldItems.forEach(item=>{
     const row=document.createElement('tr');
     row.innerHTML=`
         <td><img src="/public/images/${item.image}" alt="Item Image"></td>
