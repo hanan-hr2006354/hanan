@@ -50,22 +50,26 @@ document.addEventListener('DOMContentLoaded', function () {
     let listOfChoosen = [];
     let category = [];
     if (choosenCategory == 1) {
-        category = arrayOfItems.find(item => item.category === "necklaces");
+        category = arrayOfItems.find(item=>item.category==="necklaces");
 
     }
     if (choosenCategory == 2) {
-        category = arrayOfItems.find(item => item.category === "bracelets");
+        category = arrayOfItems.find(item => item.category==="bracelets");
     }
     if (choosenCategory == 3) {
-        category = arrayOfItems.find(item => item.category === "rings");
+        category = arrayOfItems.find(item => item.category==="rings");
     }
     if (choosenCategory == 4) {
-        category = arrayOfItems.find(item => item.category === "earrings");
+        category = arrayOfItems.find(item => item.category==="earrings");
     }
 
     if (category) { listOfChoosen = category.items; }
 
     console.log(listOfChoosen);
+
+    //max quantity setting
+    const productQuantityInput = document.getElementById('quantity');
+    productQuantityInput.setAttribute('max', nQuantity);
 
     purchaseNowButton.addEventListener('click', function () {
         const quantityChosen = parseInt(document.getElementById('quantity').value);
@@ -79,8 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 localStorage.setItem('users', JSON.stringify(allusers));
                 console.log("User balance updated:", loggedInUser.balance);
                 //update Quantity
+                console.log(nId);
                 const chosenProduct = listOfChoosen.find(product => product.id === parseInt(nId));
-                console.log(chosenProduct);
+                console.log("PRODUCT"+chosenProduct);
                 if (!chosenProduct) {
                     console.error('Chosen product not found!');
                     return; // Exit the function early if chosen product is not found

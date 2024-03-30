@@ -11,7 +11,10 @@ body {
     background-color: #f2f2f2;
 }
 /*  */
-
+input{
+    text-align: center;
+    font-size: 30px;
+}
 
 .add{
     width:60%;

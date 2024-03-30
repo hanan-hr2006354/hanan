@@ -1,58 +1,39 @@
 
-//Hanan
 const loggedin=localStorage.getItem('loggedInUser');
-const choosenCategory = localStorage.getItem('choosenCategory');
-const items = localStorage.getItem('items');
-let arrayOfItems = [];
-
+const choosenCategory=localStorage.getItem('choosenCategory');
+const items=localStorage.getItem('items');
+let arrayOfItems=[];
 if (items) {
-    arrayOfItems = JSON.parse(items); //prevents overwriting changes
+    arrayOfItems=JSON.parse(items); //prevents overwriting changes
 } else {
     fetch('data/items.json')
-        .then(response => response.json())
-        .then(data => {
-            arrayOfItems = data;
-            localStorage.setItem('items', JSON.stringify(arrayOfItems));
-        });
+        .then(response=>response.json())
+        .then(data=>{
+            arrayOfItems=data;
+            localStorage.setItem('items',JSON.stringify(arrayOfItems)); });}
 
-
-    
-}
-
-document.querySelector('.logout').addEventListener('click', () => {
+document.querySelector('.logout').addEventListener('click',()=>{
     localStorage.removeItem('loggedInUser');
-    window.location.href = '/public/login.html'; 
-});
-document.querySelector('.logout').addEventListener('click', () => {
-    localStorage.removeItem('loggedInUser');
-});
-
-
-        let listOfItems = document.getElementById('category');
-
-        let listOfChoosen = [];
-        let category = [];
-        if (choosenCategory == 1) {
-            category = arrayOfItems.find(item => item.category === "necklaces");
-        }
+    window.location.href='/public/login.html'; });
+document.querySelector('.logout').addEventListener('click',() =>{
+    localStorage.removeItem('loggedInUser');});
+        let listOfItems=document.getElementById('category');
+        let listOfChoosen=[];
+        let category=[];
+        if (choosenCategory==1) {
+            category = arrayOfItems.find(item => item.category === "necklaces");}
         if (choosenCategory == 2) {
-            category = arrayOfItems.find(item => item.category === "bracelets");
-        }
+            category = arrayOfItems.find(item => item.category === "bracelets");}
         if (choosenCategory == 3) {
-            category = arrayOfItems.find(item => item.category === "rings");
-        }
+            category = arrayOfItems.find(item => item.category === "rings");}
         if (choosenCategory == 4) {
-            category = arrayOfItems.find(item => item.category === "earrings");
-        }
+            category = arrayOfItems.find(item => item.category === "earrings");}
         
-
         if (category) {
             listOfChoosen = category.items;
-
             const choosenItemsHtml = listOfChoosen.map(item=>addDataToHTML(item)).join('');
             listOfItems.innerHTML = choosenItemsHtml;
-            addPurchaseButtonListeners();
-        }
+            addPurchaseButtonListeners();}
 
 
 

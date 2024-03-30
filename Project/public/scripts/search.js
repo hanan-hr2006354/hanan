@@ -98,6 +98,24 @@ function addPurchaseButtonListeners() {
                 alert('Item is sold out.');
                 return;
             }
+            const categoriesData = JSON.parse(localStorage.getItem('items'));
+            categoriesData.forEach(category => {
+                const item = category.items.find(item => item.id === parseInt(productId));
+                if (item) {
+                    chosenCategory = category.category;
+                }
+                let chosenCategoryValue;
+                if (chosenCategory === 'necklaces') {
+                    chosenCategoryValue = 1;
+                } else if (chosenCategory === 'bracelets') {
+                    chosenCategoryValue = 2;
+                } else if (chosenCategory === 'rings') {
+                    chosenCategoryValue = 3;
+                } else if (chosenCategory === 'earrings') {
+                    chosenCategoryValue = 4;
+                }
+                localStorage.setItem('choosenCategory', chosenCategoryValue);
+            });
 
             // Proceed with purchase if user is logged in and has sufficient balance
             const loggedIn = localStorage.getItem('loggedInUser');
