@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox id="vbox" prefHeight="429.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button fx:id="HomeButton" mnemonicParsing="false" text="Home" />
+               </graphic>
+          </Menu>
+          <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button fx:id="ConferenceButton" mnemonicParsing="false" onAction="#handleConference" text="Conferences" />
+               </graphic>
+          </Menu>
+          <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button fx:id="HelpButton" mnemonicParsing="false" onAction="#handleHelp" text="Help" />
+               </graphic></Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <MenuButton fx:id="profileButton" alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" text="Profile" textFill="#030102" translateX="450.0">
+                    <items>
+                      <MenuItem fx:id="profilechoice" mnemonicParsing="false" onAction="#handleProfile" text="View Profile" />
+                        <MenuItem fx:id="logoutchoice" mnemonicParsing="false" onAction="#handleLogout" text="log out" />
+                    </items>
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </MenuButton>
+               </graphic>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Text fill="#ca7294" strokeWidth="0.0" text="Welcome to QU Conference Managment System" translateX="200.0" translateY="10.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Welcome to our website! we provide best features to simplity process of conference services such as submiting and assigning papers.&quot;" translateX="80.0" translateY="80.0" wrappingWidth="229.42855834960938">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="328.0" fitWidth="373.0" pickOnBounds="true" preserveRatio="true" translateX="350.0" translateY="-50.0">
+         <image>
+            <Image url="@../../../../Desktop/SE%20pictures/academic_conference_shutterstock_481869205.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</VBox>
